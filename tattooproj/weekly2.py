@@ -17,7 +17,7 @@ print ("<!DOCTYPE html><html><head>")
 #jquery library
 print ("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>")
 #script
-print ("""<script >)
+print ("""<script >
 var cnt=0;
 var id1;
 var id2;
