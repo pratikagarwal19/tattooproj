@@ -76,6 +76,7 @@ WSGI_APPLICATION = 'tattooproj.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'djongo',  #SWITCH TO MONGODB
         'NAME':'Cluster',
         'HOST':'mongodb+srv://derek:trek6000@cluster0-aigzr.mongodb.net/test?retryWrites=true&w=majority',
         'USER':'derek',
