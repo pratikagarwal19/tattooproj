@@ -12,12 +12,12 @@ artist = ["artist A","artist B","artist C","artist D","artist E","artist F","art
 cgitb.enable()
 form = cgi.FieldStorage()
 
-print "Content-type: text/html\n\n"
-print "<!DOCTYPE html><html><head>"
+print ("Content-type: text/html\n\n")
+print ("<!DOCTYPE html><html><head>")
 #jquery library
-print "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>"
+print ("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>")
 #script
-print """<script >
+print ("""<script >
 var cnt=0;
 var id1;
 var id2;
@@ -71,75 +71,75 @@ $(document).ready(function() {
         }
     });
 });
-    </script>"""
+    </script>""")
 
-print """<style>
+print ("""<style>
 	table{border:2px solid black; }
-    td{border:2px solid black; cursor:pointer; height:100px;}</style>"""
-print "<title>Weekly</title></head>"
-print "<body>"
-print "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+    td{border:2px solid black; cursor:pointer; height:100px;}</style>""")
+print ("<title>Weekly</title></head>")
+print ("<body>")
+print ("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">")
 
-print "<form id=custdets action=custdets.py>"
+print ("<form id=custdets action=custdets.py>")
 
 #time column
-print "<table id=table style=\" float: left; \"><tr><th>TIME</th><th>day1</th><th>day 2</th><th>day 3</th><th>day 4</th><th>day 5</th><th>day 6</th><th>day 7</th></tr>"
+print ("<table id=table style=\" float: left; \"><tr><th>TIME</th><th>day1</th><th>day 2</th><th>day 3</th><th>day 4</th><th>day 5</th><th>day 6</th><th>day 7</th></tr>")
 
 for h in range(00,25,1):
     for m in range(00,60,15):
         for n in customer:
             if((m+15)==60):
-                print "<tr><td>"+str(h)+" : "+str(m)+" to "+str(h+1)+" : 0 </td>"
+                print ("<tr><td>"+str(h)+" : "+str(m)+" to "+str(h+1)+" : 0 </td>")
             else:
-                print "<tr><td>"+str(h)+" : "+str(m)+"<br>to<br>"+str(h)+" : "+str(m+15)+"</td>" #End of first cell
+                print ("<tr><td>"+str(h)+" : "+str(m)+"<br>to<br>"+str(h)+" : "+str(m+15)+"</td>" #End of first cell)
 
             #week 1
-            print "<td draggable=true ondragstart=drag(event) id=c"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>"
-            print "<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>"     #replace apointment with database value
-            print "<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>"		#replace artist with database value
-            print "<a href=custdets.py >View_Details</a></td>"
+            print ("<td draggable=true ondragstart=drag(event) id=c"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>"
+            print ("<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>"     #replace apointment with database value
+            print ("<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>"		#replace artist with database value
+            print ("<a href=custdets.py >View_Details</a></td>")
 
             #week 2
-            print "<td draggable=true ondragstart=drag(event) id=c"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>"
-            print "<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>"     #replace apointment with database value
-            print "<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>"		#replace artist with database value
+            print "<td draggable=true ondragstart=drag(event) id=c"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>")
+            print "<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>")   #replace apointment with database value
+            print "<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>")		#replace artist with database value
             print "<a href=custdets.py >View_Details</a></td>"
 
             #week 3
-            print "<td draggable=true ondragstart=drag(event) id=c"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>"
-            print "<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>"     #replace apointment with database value
-            print "<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>"		#replace artist with database value
-            print "<a href=custdets.py >View_Details</a></td>"
+            print "<td draggable=true ondragstart=drag(event) id=c"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>")
+            print "<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>")     #replace apointment with database value
+            print "<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>")		#replace artist with database value
+            print "<a href=custdets.py >View_Details</a></td>")
 
             #week 4
-            print "<td draggable=true ondragstart=drag(event) id=c"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>"
+            print ("<td draggable=true ondragstart=drag(event) id=c"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>"
             print "<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>"     #replace apointment with database value
             print "<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>"		#replace artist with database value
             print "<a href=custdets.py >View_Details</a></td>"
 
             #week 5
-            print "<td draggable=true ondragstart=drag(event) id=c"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>"
-            print "<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>"     #replace apointment with database value
-            print "<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>"		#replace artist with database value
-            print "<a href=custdets.py >View_Details</a></td>"
+            print ("<td draggable=true ondragstart=drag(event) id=c"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>")
+            print ("<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>")     #replace apointment with database value
+            print ("<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>")	#replace artist with database value
+            print ("<a href=custdets.py >View_Details</a></td>")
 
             #week 6
-            print "<td draggable=true ondragstart=drag(event) id=c1r"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>"
-            print "<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>"     #replace apointment with database value
-            print "<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>"		#replace artist with database value
-            print "<a href=custdets.py >View_Details</a></td>"
+            print ("<td draggable=true ondragstart=drag(event) id=c1r"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>")
+            print ("<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>")     #replace apointment with database value
+            print ("<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>") 		#replace artist with database value
+            print ("<a href=custdets.py >View_Details</a></td>")
 
             #week 7
-            print "<td draggable=true ondragstart=drag(event) id=c"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>"
-            print "<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>"     #replace apointment with database value
-            print "<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>"		#replace artist with database value
-            print "<a href=custdets.py >View_Details</a></td>"
+            print ("<td draggable=true ondragstart=drag(event) id=c"+str(h)+"><label> Customer:   </label> <label name=c>"+str(customer[n-1])+"</label><br>")
+            print ("<label> Apointment: </label> <label name=time >"+str(apointment[n-1])+"</label><br>")     #replace apointment with database value
+            print ("<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>")		#replace artist with database value
+            print ("<a href=custdets.py >View_Details</a></td>")
 
-            print "</tr>" #End of row
-print "</table>"
+            print ("</tr>") #End of row
+print ("</table>")
 
 
 
-print "</form>"
+print ("</form>")
 
-print "</body></html>"
+print ("</body></html>")
