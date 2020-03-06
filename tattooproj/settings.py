@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'tattooproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  #SWITCH TO MONGODB
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'djongo', #'django.db.backends.sqlite3',  SWITCHED TO MONGODB with DJONGO
+        'NAME':   'Cluster0',          #os.path.join(BASE_DIR, 'db.sqlite3'),
+        'HOST':   'mongodb+srv://derek:<password>@cluster0-aigzr.mongodb.net/test?retryWrites=true&w=majority',
+        'USER':   'derek',
+        'PASSWORD':  'trek6000'
+    
     }
 }
 
