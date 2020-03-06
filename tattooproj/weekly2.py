@@ -135,7 +135,7 @@ for h in range(00,25,1):
             print ("<label> Artist:     </label> <label name=artist >"+str(artist[n-1])+"</label><br>")		#replace artist with database value
             print ("<a href=custdets.py >View_Details</a></td>")
 
-            print ("</tr>" #End of row)
+            print ("</tr>") #End of row
 print ("</table>")
 
 
