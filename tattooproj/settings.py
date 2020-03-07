@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -75,9 +76,11 @@ WSGI_APPLICATION = 'tattooproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  #SWITCH TO MONGODB
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        
+        client = pymongo.MongoClient("mongodb+srv://derek:<password>@cluster0-aigzr.mongodb.net/test?retryWrites=true&w=majority")
+        db = client.test
+                            #for python 3.6 or later!!!!
+               }
 }
 
 
