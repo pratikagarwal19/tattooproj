@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from pymongo import MongoClient
+import pymongo
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -75,11 +75,13 @@ WSGI_APPLICATION = 'tattooproj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+client= pymongo.MongoClient("mongodb+srv://Derek:<password>@cluster0-6udxg.mongodb.net/test?retryWrites=true&w=majority")
+db= client.test
+
 DATABASES = {
     'default': {
+           
         
-        # client = pymongo.MongoClient("mongodb+srv://pratik-prabhu:Pratik@000@cluster0-aigzr.mongodb.net/test?retryWrites=true&w=majority")
-        # db = client['']
                             #for python 3.6 or later!!!!
     }
 }
