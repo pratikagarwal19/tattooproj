@@ -76,15 +76,11 @@ WSGI_APPLICATION = 'tattooproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',  #SWITCH TO MONGODB
-        'NAME':'Cluster',
-        'HOST':'mongodb+srv://derek:trek6000@cluster0-aigzr.mongodb.net/test?retryWrites=true&w=majority',
-        'USER':'derek',
-        'PASSWORD':'trek6000'
         
-       
-       
-    }
+        client = pymongo.MongoClient("mongodb+srv://derek:<password>@cluster0-aigzr.mongodb.net/test?retryWrites=true&w=majority")
+        db = client.test
+                            #for python 3.6 or later!!!!
+               }
 }
 
 
