@@ -76,13 +76,13 @@ WSGI_APPLICATION = 'tattooproj.wsgi.application'
 DATABASES = {
     'default': {
                  
-client = pymongo.MongoClient("mongodb+srv://derek:trek6000@cluster0-aigzr.mongodb.net/test?retryWrites=true&w=majority")
-db = client.test
+# client = pymongo.MongoClient("mongodb+srv://derek:trek6000@cluster0-aigzr.mongodb.net/test?retryWrites=true&w=majority")
+# db = client.test
                                     #FOR PYTHON 3.6 OR LATER
-});
-
     }
+
 }
+
 
 
 # Password validation

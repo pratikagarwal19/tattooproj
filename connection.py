@@ -2,14 +2,14 @@ import dns
 from pymongo import MongoClient
 import datetime
 
-client = MongoClient('mongodb+srv://pratik:QeJmJPmFYOliF9Du@cluster0-nxdcn.mongodb.net/test')
+client = MongoClient('mongodb+srv://Derek:trek6000@cluster0-6udxg.mongodb.net/test')
 
 db = client.gettingStarted
 
 people = db.people
 
 personDocument = {
-  "name": { "first": "Alan", "last": "Turing" },
+  "name": { "first": "Khurram", "last": "Khan" },
   "birth": datetime.datetime(1912, 6, 23),
   "death": datetime.datetime(1954, 6, 7),
   "contribs": [ "Turing machine", "Turing test", "Turingery" ],
