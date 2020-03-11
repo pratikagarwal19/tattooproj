@@ -81,7 +81,6 @@ db= client.test
 DATABASES = {
     'default': {
            
-        
                             #for python 3.6 or later!!!!
     }
 }
