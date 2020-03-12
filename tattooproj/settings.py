@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'tattooproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  #SWITCH TO MONGODB
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+                 
+client = pymongo.MongoClient("mongodb+srv://derek:trek6000@cluster0-aigzr.mongodb.net/test?retryWrites=true&w=majority")
+db = client.test
+                                    #FOR PYTHON 3.6 OR LATER
+});
+
     }
 }
 
