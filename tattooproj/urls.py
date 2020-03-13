@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('weekly/', views.weekly, name='weekly'),
     path('admin/', admin.site.urls),
-    
+    path('sign/',views.signin,name='signin'),
+]
