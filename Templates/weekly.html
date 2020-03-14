@@ -1,5 +1,70 @@
 {% extends 'base.html'%}
 
 {%block content%}
+
+    <style>
+        table {
+            margin: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+    </style>
+
     <h1>This is the weekly page</h1>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Time</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+                <td>Dummy</td>
+                <td>Dummy</td>
+                <td>Dummy</td>
+                <td>Dummy</td>
+                <td>Dummy</td>
+            </tr>
+            <tr>
+                <td>Alan</td>
+                <td>Jellybean</td>
+                <td>$3.76</td>
+                <td>Dummy</td>
+                <td>Dummy</td>
+                <td>Dummy</td>
+                <td>Dummy</td>
+                <td>Dummy</td>
+            </tr>
+            <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+                <td>Dummy</td>
+                <td>Dummy</td>
+                <td>Dummy</td>
+                <td>Dummy</td>
+                <td>Dummy</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
 {% endblock %}
