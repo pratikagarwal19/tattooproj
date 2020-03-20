@@ -20,5 +20,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('weekly/', include('weekly.urls')),
     path('admin/', admin.site.urls),
-    path('sign/',views.signin,name='signin'),
+    # path('sign/',views.signin,name='signin'),
 ]
