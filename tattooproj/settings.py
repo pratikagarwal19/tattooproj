@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import pymongo
-
+from pymongo import MongoClient
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+            ]
 
 ROOT_URLCONF = 'tattooproj.urls'
 
@@ -81,8 +81,13 @@ db= client.test
 
 DATABASES = {
     'default': {
-           
-                            #for python 3.6 or later!!!!
+
+"""
+        'ENGINE': 'django.db.backends.sqlite3',  #SWITCH TO MONGODB
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),"""
+        
+                    client = pymongo.MongoClient("mongodb+srv://Derek:trek6000@cluster0-6udxg.mongodb.net/test?retryWrites=true&w=majority")
+                    db = client.test
     }
 }
 
