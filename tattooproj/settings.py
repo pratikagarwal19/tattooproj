@@ -82,13 +82,11 @@ db= client.test
 DATABASES = {
     'default': {
 
-"""
-        'ENGINE': 'django.db.backends.sqlite3',  #SWITCH TO MONGODB
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),"""
+
         
-                    #client = pymongo.MongoClient("mongodb+srv://Derek:trek6000@cluster0-6udxg.mongodb.net/test?retryWrites=true&w=majority")
-                    #db = client.test
-    }
+                    'client' : 'pymongo.MongoClient("mongodb+srv://Derek:trek6000@cluster0-6udxg.mongodb.net/test?retryWrites=true&w=majority")',
+                    'db' : 'client.test'
+               }
 }
 
 
