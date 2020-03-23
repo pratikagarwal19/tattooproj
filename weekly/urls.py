@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.weekly, name='weekly'),
+    path('artist', views.get_artist, name='artist')
 ]

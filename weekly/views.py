@@ -1,5 +1,8 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 import datetime
+from .connection import Connection
+import pprint
 
 # Create your views here.
 
@@ -20,3 +23,20 @@ def weekly(request):
     return render(request, '../Templates/weekly.html', {
         'week': week
     })
+
+
+def get_artist(request):
+    db = Connection.connect('cloud')
+
+    collection = db["artist"]
+    artists = collection.find_one()
+    print(artists)
+
+    return JsonResponse({
+        'message': 'Hello World',
+        'artists': artists
+    })
+
+
+
+
