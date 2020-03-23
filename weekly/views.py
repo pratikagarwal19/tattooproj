@@ -2,40 +2,54 @@ from django.http import JsonResponse
 from django.shortcuts import render
 import datetime
 from .connection import Connection
-import pprint
+import json
+from bson import ObjectId
+
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, ObjectId):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
+
 
 # Create your views here.
 
-
 def weekly(request):
-    x = datetime.datetime.now()
-    week_dict = {"Mon": 0, "Tue": 1, "Wed": 2, "Thu": 3, "Fri": 4, "Sat": 5, "Sun": 6}
-    week = [0]*7
-
-    day = x.strftime("%a")
-    date = int(x.strftime("%d"))
-
-    k = week_dict[day]
-
-    for i in range(0, 7):
-        week[i] = date - (k-i)
-
-    return render(request, '../Templates/weekly.html', {
-        'week': week
-    })
+    return render(request, '../Templates/index.html')
 
 
 def get_artist(request):
     db = Connection.connect('cloud')
 
     collection = db["artist"]
-    artists = collection.find_one()
-    print(artists)
+    artists = collection.find()
+    artists_array = []
 
-    return JsonResponse({
-        'message': 'Hello World',
-        'artists': artists
-    })
+    for artist in artists:
+        id = str(artist["_id"])
+        del artist["_id"]
+        artist["_id"] = id
+        artists_array.append(artist)
+
+    return JsonResponse(artists_array, safe=False)
+
+
+def get_appointments(request):
+    db = Connection.connect('cloud')
+
+    collection = db["appoinments"]
+    appointments = collection.find()
+    print(appointments)
+    appointments_array = []
+
+    for appointment in appointments:
+        id = str(appointment["_id"])
+        del appointment["_id"]
+        appointment["_id"] = id
+        appointments_array.append(appointment)
+
+    return JsonResponse(appointments_array, safe=False)
 
 
 
