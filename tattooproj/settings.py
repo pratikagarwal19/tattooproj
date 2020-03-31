@@ -76,18 +76,17 @@ WSGI_APPLICATION = 'tattooproj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-client= pymongo.MongoClient("mongodb+srv://Derek:<password>@cluster0-6udxg.mongodb.net/test?retryWrites=true&w=majority")
-db= client.test
-
-DATABASES = {
-    'default': {
-
-
-        
-                    'client' : 'pymongo.MongoClient("mongodb+srv://Derek:trek6000@cluster0-6udxg.mongodb.net/test?retryWrites=true&w=majority")',
-                    'db' : 'client.test'
-               }
+MONGODB_DATABASES = {
+    "default": {
+        "name": database_name,
+        "host": database_host,
+        "password": database_password,
+        "username": database_user,
+        "tz_aware": True, # if you using timezones in django (USE_TZ = True)
+    },
 }
+
+INSTALLED_APPS += ["django_mongoengine"]
 
 
 # Password validation
